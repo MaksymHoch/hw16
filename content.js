@@ -140,4 +140,31 @@ function Car (color, model, brand, engine, seats, speed, MaxSpeed) {
   let car2 = new Car("blue", "Mustang", "Ford", 4.0, 4, 250);
   let car3 = new Car("black", "Civic", "Honda", 1.8, 5, 180);
 
+};
+
+
+// example more simple
+function Car(color, model, brand, engine, speed, maxSpeed) {
+  this.color = color;
+  this.model = model;
+  this.brand = brand;
+  this.engine = engine;
+  this.seats = seats;
+  this.speed = speed;
+  this.MaxSpeed = MaxSpeed;
+
+  this.toText = function() {
+      return `Color: ${this.color}, Model: ${this.model}, Brand: ${this.brand}, Max Speed: ${this.maxSpeed}`;
+  };
+
+  this.toString = function() {
+      return `${this.brand} ${this.model} (${this.color})`;
+  };
+
+  this.accelerate = function(increase) {
+      console.log(`Accelerating by ${SpeedPerHour} km/h.`);
+  };
 }
+
+var myCar = new Car("black", "i750", "BMW", 200);
+alert(myCar.toText());
